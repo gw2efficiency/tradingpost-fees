@@ -1,6 +1,6 @@
 {
   "name": "gw2e-tradingpost-fees",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tiny module to calculate the fees of the tradingpost on GW2",
   "main": "./build/index.js",
   "scripts": {
