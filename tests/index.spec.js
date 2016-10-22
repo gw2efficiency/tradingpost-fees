@@ -1,5 +1,5 @@
 /* eslint-env node, mocha */
-const expect = require('chai').expect
+import {expect} from 'chai'
 import {subFees, subTax, subListing} from '../src/index'
 
 describe('tradingpost-fees', () => {
