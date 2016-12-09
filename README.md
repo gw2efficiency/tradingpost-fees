@@ -18,7 +18,7 @@ This module can be used for Node.js as well as browsers using [Browserify](https
 ## Usage
 
 ```js
-import {subFees, subTax, subListing} from 'gw2e-tradingpost-fees'
+import {subFees, subTax, subListing, listingFee, tax} from 'gw2e-tradingpost-fees'
 
 // Subtract both the 5% listing fee and the 10% tax
 subFees(100000)
@@ -31,12 +31,20 @@ subTax(100000)
 // Subtract the 5% listing fee
 subListing(100000)
 // -> 95000
+
+// Get the 10% tax
+tax(100000)
+// -> 10000
+
+// Get the 5% listing fee
+listingFee(100000)
+// -> 5000
 ```
 
 > But why not just `price * 0.85`?
 
 Because that's not how it works ingame. It is missing that there is a minimum of 
-1 copper for the listing fee as well as propper rounding. Yes, that makes a difference
+1 copper for the listing fee, tax, as well as propper rounding. Yes, that makes a difference
 for cheap items.
 
 ## Tests

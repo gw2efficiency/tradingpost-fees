@@ -25,11 +25,25 @@ export function subListing (price) {
   return Math.floor(price - listingFee(price))
 }
 
-// Check if a price is valid
-const isValidPrice = (price) => Number.isInteger(price) && price > 0
+// Check if a price is a valid number
+function isValidPrice (price) {
+  return Number.isInteger(price) && price > 0
+}
 
 // Listing fee is 5%, but min. 1 copper
-const listingFee = (price) => Math.max(Math.round(price * 0.05), 1)
+export function listingFee (price) {
+  if (!isValidPrice(price)) {
+    return 0
+  }
 
-// Tax is 10%
-const tax = (price) => Math.round(price * 0.1)
+  return Math.max(Math.round(price * 0.05), 1)
+}
+
+// Tax is 10%, but min. 1 copper
+export function tax (price) {
+  if (!isValidPrice(price)) {
+    return 0
+  }
+
+  return Math.max(Math.round(price * 0.1), 1)
+}
